@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Saathi Login</title>
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  <link rel="stylesheet" href="/static/login.css">
+</head>
+<body>
+  <main class="login-shell">
+    <section class="login-card">
+      <p class="eyebrow">ARYA COLLEGE OF ENGINEERING</p>
+      <h1>Arya Central Library Login</h1>
+      <p class="sub">Sign in to open the Student Entry Management System dashboard.</p>
+      <h2>Arya College Central Library</h2>
+      <p>This is the official internal library entry management system for students.</p>
+
+      <form id="loginForm" class="login-form">
+        <label>
+          <span>Username</span>
+          <input id="username" name="username" autocomplete="username" placeholder="Enter username">
+        </label>
+        <label>
+          <span>Password</span>
+          <div class="password-wrap">
+            <input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter password">
+            <button id="togglePasswordBtn" class="password-toggle" type="button" aria-label="Show password">Show</button>
+          </div>
+        </label>
+        <button type="submit">Open Admin Panel</button>
+      </form>
+
+      <div id="loginFeedback" class="feedback">Use librarian credentials to continue.</div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; Arya College of Engineering Library System
+  </footer>
+
+  <script src="/static/login.js"></script>
+</body>
+</html>

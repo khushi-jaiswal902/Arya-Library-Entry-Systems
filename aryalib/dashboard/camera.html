@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Saathi Camera Scan</title>
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="shell">
+    <section class="camera-hero">
+      <div class="camera-brandbar">
+        <div class="camera-brand">
+          <img class="brand-logo" src="/static/ace_logo.jpeg" alt="Arya College of Engineering logo">
+          <div class="brand-text-group">
+            <div class="brand-name">Arya College of Engineering</div>
+            <p class="brand-sub">Arya Central Library</p>
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="hero-card scan-panel camera-scan-panel camera-scan-focus">
+        <div class="camera-panel-copy">
+          <p class="eyebrow">Arya Central Library</p>
+          <h1>Student Scan Desk</h1>
+          <p class="sub">Scan the student barcode or enter the ID manually to save entry and exit instantly.</p>
+        </div>
+        <h2>Scan Student ID</h2>
+        <p>Use the camera scanner or enter a barcode manually if needed.</p>
+        <form id="scanForm" class="scan-box">
+          <input id="studentId" name="student_id" autocomplete="off" placeholder="Enter or scan student ID">
+          <button type="submit">Save Scan</button>
+        </form>
+        <div class="action-row">
+          <button id="startCameraBtn" type="button">Start Camera Scan</button>
+          <button class="secondary" id="refreshBtn" type="button">Refresh</button>
+        </div>
+        <div class="camera-shell hidden" id="cameraShell">
+          <div class="camera-frame">
+            <video id="cameraVideo" autoplay playsinline muted></video>
+            <div class="camera-overlay">
+              <div class="scan-target">
+                <div class="scan-line"></div>
+              </div>
+            </div>
+          </div>
+          <div class="camera-note" id="cameraNote">Camera ready. Hold the barcode clearly inside the frame.</div>
+          <button class="secondary" id="stopCameraBtn" type="button">Stop Camera</button>
+        </div>
+        <div id="feedback" class="feedback">Ready for the next student scan.</div>
+        <div class="result-card hidden" id="resultCard">
+          <p class="result-eyebrow" id="resultAction">Latest Scan</p>
+          <h3 id="resultName">No student scanned yet</h3>
+          <div class="result-grid">
+            <div><span>ID</span><strong id="resultStudentId">-</strong></div>
+            <div><span>Course</span><strong id="resultCourse">-</strong></div>
+            <div><span>Father Name</span><strong id="resultFatherName">-</strong></div>
+            <div><span>Date</span><strong id="resultDate">-</strong></div>
+            <div><span>Entry</span><strong id="resultEntry">-</strong></div>
+            <div><span>Exit</span><strong id="resultExit">-</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

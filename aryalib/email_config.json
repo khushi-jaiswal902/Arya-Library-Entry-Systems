@@ -1,0 +1,8 @@
+{
+  "smtp_host": "smtp.gmail.com",
+  "smtp_port": 587,
+  "sender_email": "",
+  "sender_name": "Arya Library Dashboard",
+  "sender_password": "",
+  "use_tls": true
+}

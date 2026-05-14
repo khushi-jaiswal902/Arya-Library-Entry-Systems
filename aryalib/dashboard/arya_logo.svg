@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+  <defs>
+    <linearGradient id="ring" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f766e"/>
+      <stop offset="100%" stop-color="#155e75"/>
+    </linearGradient>
+  </defs>
+  <circle cx="60" cy="60" r="54" fill="#fffaf1" stroke="url(#ring)" stroke-width="6"/>
+  <circle cx="60" cy="60" r="40" fill="#ffffff" stroke="#d9d6cc" stroke-width="2"/>
+  <path d="M60 28c7 9 11 18 11 25 0 9-5 14-11 14s-11-5-11-14c0-7 4-16 11-25z" fill="#6d28d9" opacity=".9"/>
+  <path d="M39 74h42" stroke="#0f766e" stroke-width="4" stroke-linecap="round"/>
+  <path d="M45 83h30" stroke="#d97706" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="83" cy="42" r="10" fill="#e6f5f3" stroke="#0f766e" stroke-width="3"/>
+  <path d="M83 35v14M76 42h14" stroke="#0f766e" stroke-width="3" stroke-linecap="round"/>
+  <text x="60" y="102" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="700" fill="#b91c1c">A C E</text>
+</svg>

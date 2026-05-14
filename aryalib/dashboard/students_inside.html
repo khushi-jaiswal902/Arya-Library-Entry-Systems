@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library Saathi Students Inside</title>
+  <link rel="icon" type="image/svg+xml" href="/static/favicon.svg">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="shell">
+    <nav class="topbar">
+      <div class="brand">
+        <img class="brand-logo" src="/static/ace_logo.jpeg" alt="Arya College of Engineering logo">
+        <div>
+          <p class="brand-name">ARYA COLLEGE OF ENGINEERING</p>
+          <p class="brand-sub">Arya Central Library</p>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <a class="topbar-link" href="/admin">Overview</a>
+        <a class="topbar-link" href="/recent-visits">Recent Visits</a>
+        <a class="topbar-link active-link" href="/students-inside">Students Inside</a>
+        <a class="topbar-link" href="/weekly-report">Weekly Report</a>
+        <a class="topbar-link" href="/camera">Camera Desk</a>
+        <button class="ghost-button" id="logoutBtn" type="button">Logout</button>
+      </div>
+    </nav>
+
+    <section class="single-page-header">
+      <p class="eyebrow">Arya Central Library</p>
+      <h1>Students Inside</h1>
+      <p class="sub">See all students who currently have an open library visit.</p>
+    </section>
+
+    <section class="panel single-panel">
+      <div class="panel-header">
+        <div>
+          <h2 class="section-title">Open Visits</h2>
+          <div class="panel-note">Students who have entered the library and not yet checked out</div>
+        </div>
+        <button class="ghost-button small-button" type="button" data-back-admin="true">Back to Overview</button>
+      </div>
+      <div id="insideList"></div>
+    </section>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

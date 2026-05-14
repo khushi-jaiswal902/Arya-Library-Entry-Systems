@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arya Central Library</title>
+  <link rel="icon" type="image/jpeg" href="/static/ace_logo.jpeg">
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="shell">
+    <nav class="topbar">
+      <div class="brand">
+        <img class="brand-logo" src="/static/ace_logo.jpeg" alt="Arya College of Engineering logo">
+        <div>
+          <p class="brand-name">ARYA COLLEGE OF ENGINEERING</p>
+          <p class="brand-sub">Arya Central Library</p>
+        </div>
+      </div>
+      <div class="topbar-actions">
+        <a class="topbar-link active-link" href="/admin">Overview</a>
+        <a class="topbar-link" href="/recent-visits">Recent Visits</a>
+        <a class="topbar-link" href="/students-inside">Students Inside</a>
+        <a class="topbar-link" href="/weekly-report">Weekly Report</a>
+        <a class="topbar-link" href="/camera">Camera Desk</a>
+        <button class="ghost-button" id="downloadVisitsBtn" type="button">Download Visits</button>
+        <button class="ghost-button danger-button" id="clearVisitsBtn" type="button">Clear Entries</button>
+        <button class="ghost-button" id="logoutBtn" type="button">Logout</button>
+      </div>
+    </nav>
+
+    <section class="hero" id="overview">
+      <div class="hero-card">
+        <p class="eyebrow">Arya Central Library</p>
+        <h1>Student Entry Management System</h1>
+        <p class="sub">ARYA COLLEGE OF ENGINEERING central library entry and exit dashboard for clean, fast student tracking.</p>
+      </div>
+      <div class="hero-card scan-panel">
+        <h2>Quick Scan Input</h2>
+        <p>Barcode scanner usually types the student ID into the focused field and presses Enter. You can also type a code manually for testing.</p>
+        <form id="scanForm" class="scan-box">
+          <input id="studentId" name="student_id" autocomplete="off" placeholder="Enter or scan student ID">
+          <button type="submit">Save Scan</button>
+        </form>
+        <div class="action-row">
+          <button id="startCameraBtn" type="button">Start Camera Scan</button>
+          <button class="secondary" id="refreshBtn" type="button">Refresh Dashboard</button>
+        </div>
+        <div class="camera-shell hidden" id="cameraShell">
+          <div class="camera-frame">
+            <video id="cameraVideo" autoplay playsinline muted></video>
+            <div class="camera-overlay">
+              <div class="scan-target">
+                <div class="scan-line"></div>
+              </div>
+            </div>
+          </div>
+          <div class="camera-note" id="cameraNote">Camera ready. Barcode ko frame ke andar rakho.</div>
+          <button class="secondary" id="stopCameraBtn" type="button">Stop Camera</button>
+        </div>
+        <div id="feedback" class="feedback">Ready for the next student scan.</div>
+        <div class="result-card hidden" id="resultCard">
+          <p class="result-eyebrow" id="resultAction">Latest Scan</p>
+          <h3 id="resultName">No student scanned yet</h3>
+          <div class="result-grid">
+            <div><span>Code</span><strong id="resultStudentId">-</strong></div>
+            <div><span>Father Name</span><strong id="resultFatherName">-</strong></div>
+            <div><span>Branch</span><strong id="resultCourse">-</strong></div>
+            <div><span>Date</span><strong id="resultDate">-</strong></div>
+            <div><span>Entry Time</span><strong id="resultEntry">-</strong></div>
+            <div><span>Exit Time</span><strong id="resultExit">-</strong></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats" id="stats"></section>
+
+    <section class="panel summary-panel">
+      <div class="panel-header">
+        <div>
+          <h2 class="section-title">Daily Visit Report</h2>
+          <div class="panel-note">Date-wise total visits and completed entries for printing or record work</div>
+        </div>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Total Visits</th>
+            <th>Completed</th>
+            <th>Still Inside</th>
+          </tr>
+        </thead>
+        <tbody id="dailySummaryRows"></tbody>
+      </table>
+    </section>
+
+    <section class="content">
+      <div class="panel" id="recent-visits-section">
+        <div class="panel-header">
+          <div>
+            <h2 class="section-title">Recent Visits</h2>
+            <div class="panel-note">Latest entries and exits from the library desk</div>
+          </div>
+          <a class="topbar-link small-link" href="/recent-visits">Open Full Page</a>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Code</th>
+              <th>Name</th>
+              <th>Father Name</th>
+              <th>Branch</th>
+            <th>Date</th>
+            <th>Entry Time</th>
+            <th>Exit Time</th>
+          </tr>
+        </thead>
+          <tbody id="recentRows"></tbody>
+        </table>
+      </div>
+
+      <div class="panel" id="inside-section">
+        <div class="panel-header">
+          <div>
+            <h2 class="section-title">Students Inside</h2>
+            <div class="panel-note">Open visits that do not yet have exit time</div>
+          </div>
+          <a class="topbar-link small-link" href="/students-inside">Open Full Page</a>
+        </div>
+        <div id="insideList"></div>
+      </div>
+    </section>
+
+    <footer class="footer-note">
+      <div class="footer-copy">
+        <p class="footer-title">Developed By Himanshu Prajapat</p>
+        <p class="footer-line">Session 2023-24</p>
+        <p class="footer-line">Email: hp81790@gmail.com</p>
+        <p class="footer-line">Phone: +91 9462266409</p>
+      </div>
+      <div class="footer-copy footer-copy-right">
+        <p class="footer-title">ARYA COLLEGE OF ENGINEERING</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

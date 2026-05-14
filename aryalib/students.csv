@@ -1,0 +1,4 @@
+student_id,name,course,phone,valid_until
+LIB001,Rahul Kumar,BCA,9876543210,2026-12-31
+LIB002,Anjali Sharma,BSc,9876501234,2026-12-31
+LIB003,Meena Verma,BA,9123456780,2026-09-30
